@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vuln App - Products</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1>Welcome to Vuln App</h1>
+        <nav>
+            <span id="authStatus">
+                <a href="login.html" id="loginLink">Login</a>
+            </span>
+            <a href="cart.html">Cart</a>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <section class="products-section">
+            <h2>Our Products</h2>
+            <div id="product-list" class="products-grid">
+
+                <!-- Apple -->
+                <div class="product-card" data-name="Apple">
+                    <img src="http://gitlab:8081/images/apple.png"
+                         alt="Apple"
+                         class="product-image">
+                    <h3>Apple</h3>
+                    <a href="product.html?name=Apple" class="view-details">View Details</a>
+                </div>
+
+                <!-- Banana -->
+                <div class="product-card" data-name="Banana">
+                    <img src="http://gitlab:8081/images/banana.png"
+                         alt="Banana"
+                         class="product-image">
+                    <h3>Banana</h3>
+                    <a href="product.html?name=Banana" class="view-details">View Details</a>
+                </div>
+
+                <div class="product-card" data-name="Grapes">
+                    <img src="http://gitlab:8081/images/grapes.png"
+                         alt="Grapes"
+                         class="product-image">
+                    <h3>Grapes</h3>
+                    <a href="product.html?name=Grapes" class="view-details">View Details</a>
+                </div>
+
+                <div class="product-card" data-name="Kiwi">
+                    <img src="http://gitlab:8081/images/kiwi.png"
+                         alt="Kiwi"
+                         class="product-image">
+                    <h3>Kiwi</h3>
+                    <a href="product.html?name=Kiwi" class="view-details">View Details</a>
+                </div>
+
+                <div class="product-card" data-name="Mango">
+                    <img src="http://gitlab:8081/images/mango.png"
+                         alt="Mango"
+                         class="product-image">
+                    <h3>Mango</h3>
+                    <a href="product.html?name=Mango" class="view-details">View Details</a>
+                </div>
+
+                <div class="product-card" data-name="Orange">
+                    <img src="http://gitlab:8081/images/orange.png"
+                         alt="Orange"
+                         class="product-image">
+                    <h3>Orange</h3>
+                    <a href="product.html?name=Orange" class="view-details">View Details</a>
+                </div>
+
+                <div class="product-card" data-name="Pineapple">
+                    <img src="http://gitlab:8081/images/pineapple.png"
+                         alt="Pineapple"
+                         class="product-image">
+                    <h3>Pineapple</h3>
+                    <a href="product.html?name=Pineapple" class="view-details">View Details</a>
+                </div>
+
+                <div class="product-card" data-name="Strawberry">
+                    <img src="http://gitlab:8081/images/strawberry.png"
+                         alt="Strawberry"
+                         class="product-image">
+                    <h3>Strawberry</h3>
+                    <a href="product.html?name=Strawberry" class="view-details">View Details</a>
+                </div>
+
+            </div>
+        </section>
+    </main>
+</div>
+
+<script src="js/auth.js"></script>
+<script src="js/jquery-1.4.2.min.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Errore</title>
+    <style>
+        .container {
+            text-align: center;
+            padding: 50px;
+        }
+        h1 {
+            color: #3498db;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>La pagina non è stata trovata :(</h1>
+    <p id="message"></p>
+    <p>Torna alla <a href="/">homepage</a></p>
+</div>
+
+<div th:if="${vulnerabilityConfig.features['XSS_REFLECTED']}">
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const encodedPath = window.location.pathname;
+            const decodedPath = decodeURIComponent(encodedPath);
+            const pathWithoutSlash = decodedPath.replace(/^\/+/, '');
+            const messageElement = document.getElementById('message');
+            messageElement.innerHTML = `La pagina che hai cercato <strong>${pathWithoutSlash}</strong> non esiste.`;
+        });
+    </script>
+</div>
+</body>
+</html>

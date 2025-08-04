@@ -1,0 +1,10 @@
+http://127.0.0.1:8080/
+http://127.0.0.1:8080/index.html
+http://127.0.0.1:8080/product.html
+http://127.0.0.1:8080/login.html
+http://127.0.0.1:8080/sitemap.xml
+http://127.0.0.1:8081/
+http://127.0.0.1:8081/images
+http://127.0.0.1:8081/api
+http://127.0.0.1:8081/api/login
+http://127.0.0.1:8081/api/products

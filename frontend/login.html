@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vuln App - Login</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1>Welcome to Vuln App</h1>
+        <nav>
+            <span id="authStatus">
+                <a href="index.html" id="loginLink">Home</a>
+            </span>
+        </nav>
+    </header>
+
+    <!--Credentials: username=admin&password=adminpassword -->
+
+    <div class="login-container">
+        <section class="login-section">
+            <h2>User Login</h2>
+            <div id="loginError" class="error-message"></div>
+            <form class="login-form" id="loginForm">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <button type="submit" id="loginButton">Login</button>
+            </form>
+        </section>
+    </div>
+</div>
+
+<script src="js/login.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/jquery-1.4.2.min.js"></script>
+
+</body>
+</html>

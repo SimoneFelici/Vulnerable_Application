@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Errore</title>
+    <style>
+        .container {
+            text-align: center;
+            padding: 50px;
+        }
+        h1 {
+            color: #dc3545;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>La pagina non è stata trovata :(</h1>
+    <p id="message"></p>
+    <p>Torna alla <a href="/">homepage</a></p>
+</div>
+
+<script th:if="${xssEnabled}">
+    document.addEventListener('DOMContentLoaded', function() {
+        const encodedPath = window.location.pathname;
+        const decodedPath = decodeURIComponent(encodedPath);
+        const pathWithoutSlash = decodedPath.replace(/^\/+/, '');
+        const messageElement = document.getElementById('message');
+        // VULNERABILE: usiamo innerHTML
+        messageElement.innerHTML = `La pagina che hai cercato <strong>${pathWithoutSlash}</strong> non esiste.`;
+    });
+</script>
+
+<script th:if="${!xssEnabled}">
+    document.addEventListener('DOMContentLoaded', function() {
+        const path = window.location.pathname;
+        const safePath = decodeURIComponent(path).replace(/^\/+/, '');
+        const messageElement = document.getElementById('message');
+        // SICURO: usiamo textContent
+        messageElement.textContent = `La pagina che hai cercato ${safePath} non esiste.`;
+    });
+</script>
+
+</body>
+</html>

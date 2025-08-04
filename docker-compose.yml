@@ -1,0 +1,45 @@
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: vuln-backend
+    ports:
+      - "8081:8080"
+    restart: always
+    networks:
+      - app-network
+    depends_on:
+      - vuln-db
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: vuln-frontend
+    ports:
+      - "9091:80"
+    restart: always
+    networks:
+      - app-network
+
+  vuln-db:
+    image: mysql:8.0.40
+    container_name: vuln-db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: vuln_app
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: adminpassword
+    ports:
+      - "3306:3306"
+    networks:
+      - app-network
+    volumes:
+      #- ./docker/mysql_data:/var/lib/mysql
+      - ./mysql-init-scripts:/docker-entrypoint-initdb.d
+
+networks:
+  app-network:
+    driver: bridge

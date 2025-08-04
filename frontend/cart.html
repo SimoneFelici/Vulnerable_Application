@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vuln App - Carrello</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1>Il tuo Carrello</h1>
+        <nav>
+            <a href="index.html">Prodotti</a>
+            <span id="authStatus">
+                <a href="login.html" id="loginLink">Login</a>
+            </span>
+        </nav>
+    </header>
+    <main>
+        <section class="cart-section">
+            <h2>Frutti nel Carrello</h2>
+            <ul id="cartItemsList"></ul>
+            <button id="checkoutBtn">Compra</button>
+            <div id="cartMessage"></div>
+        </section>
+    </main>
+</div>
+<script src="js/cart.js"></script>
+<script src="js/auth.js"></script>
+</body>
+</html>
