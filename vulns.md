@@ -29,7 +29,6 @@
 
 ## A8:2017-Insecure Deserialization
 
-
 ## A9:2017-Using Components with Known Vulnerabilities ✅
 - JQuery (v1.4.2).
 - Apache Tomcat (v10.1.1).
